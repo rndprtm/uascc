@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Direktori UMKM</title>
+  <title>Form Produk</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,11 +26,26 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-  
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Daftar Produk</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
     <!-- Main content -->
     <section class="content">
-<br>      <!-- Default box -->
+
+      <!-- Default box -->
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Title</h3>
@@ -45,20 +60,25 @@
           </div>
         </div>
         <div class="card-body">
-        <div class="container-fluid px-4">
-          <div class="row">
-              <div class="col-xl-4 col-md-6">
-                  <div class="card text-white mb-4">
-                      <div class="card-body text-dark">Berisi Data Produk</div>
-                      <div class="card-footer bg-warning d-flex align-items-center justify-content-between">
-                        <a href="/admin/produks" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-                      </div>
-                  </div>
-              </div>
-              </div>
-          </div>
-      </div>
-      </div>
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Id</th>
+                    <th>Nama</th>
+                    <th>Deskripsi</th>
+                    <th>Harga</th>
+                    <th>Data Diupdate Pada</th>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>{{ $produks->id }}</td>
+                <td>{{ $produks->nama }}</td>
+                <td>{{ $produks->description }}</td>
+                <td>{{ $produks->price }}</td>
+                <td>{{ $produks->created_at }}</td>
+                <td>{{ $produks->update_at }}</td>
+            
+            </table>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

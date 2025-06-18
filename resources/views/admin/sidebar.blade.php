@@ -4,7 +4,7 @@
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
       <img src="{{asset('assets')}}/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Direktori UMKM</span>
+      <span class="brand-text font-weight-light">MacWish</span>
     </a>
 
     <!-- Sidebar -->
@@ -55,33 +55,9 @@
                 @endif
               @endauth
               <li class="nav-item">
-                 <a href="{{ url('admin/kabkota') }}" class="nav-link">
-                   <i class="far fa-circle nav-icon"></i>
-                   <p>Kabupaten Kota</p>
-                  </a>
-                </li>
-              <li class="nav-item">
-                <a href="{{ url('admin/kategoriumkm') }}" class="nav-link">
+                <a href="{{ url('admin/produks') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Kategori Umkm</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('admin/pembina') }}" class="nav-link">
-                   <i class="far fa-circle nav-icon"></i>
-                   <p>Pembina</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('admin/provinsi') }}" class="nav-link">
-                   <i class="far fa-circle nav-icon"></i>
-                   <p>Provinsi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('admin/umkm') }}" class="nav-link">
-                   <i class="far fa-circle nav-icon"></i>
-                   <p>UMKM</p>
+                  <p>Produk</p>
                 </a>
               </li>
             </ul>

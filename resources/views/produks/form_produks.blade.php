@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Direktori UMKM</title>
+  <title>Kategori Produk</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,11 +26,26 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-  
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Daftar Produk</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
     <!-- Main content -->
     <section class="content">
-<br>      <!-- Default box -->
+
+      <!-- Default box -->
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Title</h3>
@@ -45,20 +60,45 @@
           </div>
         </div>
         <div class="card-body">
-        <div class="container-fluid px-4">
-          <div class="row">
-              <div class="col-xl-4 col-md-6">
-                  <div class="card text-white mb-4">
-                      <div class="card-body text-dark">Berisi Data Produk</div>
-                      <div class="card-footer bg-warning d-flex align-items-center justify-content-between">
-                        <a href="/admin/produks" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-                      </div>
-                  </div>
-              </div>
+        <form class="forms-sample" action="{{ url('admin/produks/store') }}" method="POST">
+          @csrf
+        <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label">Nama Produk</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="name" name="name" required>
+                    <option value="">-- Pilih Produk --</option>
+                    <option value="MacWish Katsu">MacWish Original</option>
+                    <option value="MacWish Mix Original">MacWish Beef Patty</option>
+                    <option value="MacWish BBQ">MacWish Katsu</option>
+                    <option value="MacWish Cheese">MacWish Sausage</option>
+                </select>
+            </div>
+        </div>
+
+
+          <div class="form-group row">
+              <label for="description" class="col-sm-4 col-form-label">Deskripsi</label>
+              <div class="col-sm-8">
+                  <textarea class="form-control" id="description" name="description" rows="3" placeholder="Masukkan Deskripsi Produk"></textarea>
               </div>
           </div>
-      </div>
-      </div>
+
+          <div class="form-group row">
+              <label for="price" class="col-sm-4 col-form-label">Harga</label>
+              <div class="col-sm-8">
+                  <input type="number" class="form-control" id="price" name="price" placeholder="Contoh: 15000" step="0.01" required>
+              </div>
+          </div>
+
+          <div class="form-group row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8">
+                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <button type="reset" class="btn btn-warning">Reset</button>
+              </div>
+          </div>
+        </form>
+
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
